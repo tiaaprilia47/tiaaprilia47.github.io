@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - SampahIN</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background-color: #d3e3cc;
+      }
+
+      header {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header nav a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+      }
+
+      .dropdown-content a {
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #555;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        text-align: center;
+      }
+
+      form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 20px;
+      }
+
+      form textarea {
+        grid-column: 1 / -1;
+      }
+
+      input,
+      textarea {
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 100%;
+      }
+
+      button {
+        grid-column: 2 / 3;
+        justify-self: end;
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      button:hover {
+        background-color: #256428;
+      }
+
+      footer {
+        background-color: #4caf50;
+        color: white;
+        padding: 40px 20px;
+        margin-top: 40px;
+      }
+
+      footer .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      footer h5,
+      footer h6 {
+        margin-bottom: 15px;
+      }
+
+      footer p {
+        margin: 5px 0;
+      }
+
+      footer a {
+        text-decoration: none;
+        font-size: 14px;
+        justify-content: space-between;
+      }
+
+      .btn-contact {
+        background-color: #25d366;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 4px;
+        margin-right: 10px;
+      }
+
+      .btn-instagram {
+        background-color: #e1306c;
+        color: white;
+        padding: 6px 12px;
+        border-radius: 4px;
+      }
+
+      footer hr {
+        margin: 30px 0;
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+
+      /* Modal */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+      }
+
+      .modal-content {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        text-align: center;
+        max-width: 400px;
+      }
+
+      .modal-content h2 {
+        color: #2e7d32;
+        margin-bottom: 15px;
+      }
+
+      .modal-content button {
+        background: #2e7d32;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .modal-content button:hover {
+        background: #256428;
+      }
+
+      @media (max-width: 768px) {
+        form {
+          grid-template-columns: 1fr;
+        }
+
+        button {
+          grid-column: auto;
+          justify-self: center;
+        }
+
+        footer {
+          flex-direction: column;
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <div><strong>SampahIN</strong></div>
+      <nav>
+        <a href="Home.html">Beranda</a>
+        <div class="dropdown">
+          <a href="#" class="dropbtn">Layanan ▾</a>
+          <div class="dropdown-content">
+            <a href="pickup.html">Pickup</a>
+            <a href="dropoff2.html">Dropoff</a>
+          </div>
+        </div>
+        <a href="Catalogue.html">Katalog</a>
+        <a href="Contact.html">Hubungi Kami</a>
+      </nav>
+    </header>
+
+    <!-- Konten Utama -->
+    <main>
+      <h1>Saran</h1>
+      <p>Silakan tinggalkan saran Anda di bawah ini.</p>
+      <form id="contactForm">
+        <input type="text" id="nama" placeholder="Nama *" required />
+        <input type="email" id="email" placeholder="Email *" required />
+        <input type="tel" id="telepon" placeholder="No. Telepon *" required />
+        <textarea id="pesan" placeholder="Saran Anda"></textarea>
+        <button type="submit">Kirim</button>
+      </form>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal" id="successModal">
+      <div class="modal-content">
+        <h2>Saran Anda Telah Dikirim!</h2>
+        <p>Terima kasih telah menghubungi kami.</p>
+        <button onclick="closeModal()">Tutup</button>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+      const form = document.getElementById("contactForm");
+      const modal = document.getElementById("successModal");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        // Validasi manual (jika mau ditambahkan custom)
+        const nama = document.getElementById("nama").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const telepon = document.getElementById("telepon").value.trim();
+
+        if (!nama || !email || !telepon) {
+          alert("Harap isi semua bidang wajib bertanda *");
+          return;
+        }
+
+        // Jika lolos, tampilkan modal
+        modal.style.display = "flex";
+        form.reset();
+      });
+
+      function closeModal() {
+        modal.style.display = "none";
+      }
+
+      window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+    </script>
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div>
+          <h5>SampahIN</h5>
+          <p>
+            <i class="bi bi-geo-alt-fill"></i> Sleman, Yogyakarta, Indonesia
+          </p>
+          <p><i class="bi bi-envelope-fill"></i> SampahIN@gmail.com</p>
+          <p><i class="bi bi-whatsapp"></i> +62-813-5909-7702</p>
+        </div>
+        <div style="text-align: right">
+          <h6>Hubungi Kami</h6>
+          <a href="https://wa.me/6281359097702" class="btn-contact"
+            ><i class="bi bi-whatsapp"></i> Hubungi Kami</a
+          >
+          <a href="https://instagram.com/SampahIn" class="btn-instagram"
+            ><i class="bi bi-instagram"></i> Ikuti Kami</a
+          >
+        </div>
+      </div>
+      <hr />
+      <div class="text-center">©2025 SampahIN</div>
+    </footer>
+  </body>
+</html>

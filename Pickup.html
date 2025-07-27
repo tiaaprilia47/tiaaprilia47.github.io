@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulir Penjemputan - SampahIN</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #eaf6ea;
+      }
+      header {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      header nav a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      header nav {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: flex-end; 
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px;
+        max-width: 1100px;
+        margin: 0 auto;
+        flex-direction: row;
+      }
+      .info,
+      .form-section {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        flex: 1;
+      }
+      .info {
+        flex: 1;
+        background-color: #4caf50;
+        color: white;
+        margin-right: 20px;
+      }
+      .info h2 {
+        margin-top: 0;
+      }
+      .info ul {
+        list-style: none;
+        padding-left: 0;
+      }
+      .info ul li::before {
+        content: "\2713";
+        color: #fff;
+        margin-right: 10px;
+      }
+      .form-section {
+        flex: 1;
+      }
+      .form-section h2 {
+        margin-top: 0;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+      input[type="text"],
+      input[type="date"],
+      input[type="time"],
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .checkbox-group label {
+        display: flex;
+        align-items: center;
+      }
+      .checkbox-group input {
+        margin-right: 8px;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 8px;
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      footer {
+        background-color: #388e3c;
+        color: white;
+        padding: 1rem;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .btn-instagram {
+        background: linear-gradient(
+          45deg,
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888
+        );
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.3s ease-in-out;
+      }
+
+      .btn-instagram:hover {
+        opacity: 0.85;
+        color: white;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropbtn {
+        color: white;
+        text-decoration: none;
+        padding: 8px 0;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        min-width: 150px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        border-radius: 4px;
+        top: 100%; /* muncul tepat di bawah */
+      }
+
+      .dropdown-content a {
+        color: white;
+        padding: 10px 15px;
+        display: block;
+        text-decoration: none;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #4caf50;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      /* css validasi */
+      .error-message {
+        color: #e74c3c;
+        font-size: 0.875em;
+        margin-top: 5px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div><strong>SampahIN</strong></div>
+      <nav>
+        <a href="Home.html">Beranda</a>
+        <div class="dropdown">
+          <a href="#" class="dropbtn">Layanan ▾</a>
+          <div class="dropdown-content">
+            <a href="Pickup.html">Pickup</a>
+            <a href="dropoff2.html">Dropoff</a>
+          </div>
+        </div>
+        <a href="Catalogue.html">Katalog</a>
+        <a href="Contact.html">Hubungi Kami</a>
+      </nav>
+    </header>
+
+    <!-- kolom kiri -->
+    <div class="container">
+      <div class="info">
+        <h2>📋 Informasi Layanan</h2>
+        <p>
+          Silakan pilih jenis sampah yang akan dijual. Petugas akan datang ke lokasi untuk menjemput dan melakukan
+          pembayaran sesuai dengan harga yang berlaku. Gunakan formulir di samping untuk
+          menjadwalkan penjemputan barang Anda dengan mudah dan cepat. Tim kami
+          siap melayani Anda dengan profesional.
+        </p>
+        <ul>
+          <li>Pastikan alamat yang Anda masukkan sudah lengkap dan benar.</li>
+          <li>Pilih tanggal dan waktu yang sesuai dengan ketersediaan Anda.</li>
+          <li>
+            Kami akan menghubungi Anda untuk konfirmasi setelah formulir
+            dikirim.
+          </li>
+          <li>
+            Layanan tersedia setiap hari kerja dari jam 08:00 hingga 17:00.
+          </li>
+        </ul>
+      </div>
+
+      <!-- kolom kanan - form -->
+      <div class="form-section">
+        <h2>🚚 Formulir Penjemputan</h2>
+        <form id="pickupForm">
+          <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input
+              type="text"
+              id="nama"
+              name="nama"
+              placeholder="Masukkan Nama Anda"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="alamat">Alamat Penjemputan</label>
+            <input
+              type="text"
+              id="alamat"
+              placeholder="Masukkan Alamat Lengkap"
+              name="alamat"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="telepon">Nomor Telepon</label>
+            <input
+              type="text"
+              id="telepon"
+              placeholder="Masukkan Nomor Telepon Anda"
+              name="telepon"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Pilih Jenis Sampah</label>
+            <div class="checkbox-group">
+              <label
+                ><input type="checkbox" name="sampah" value="plastik" />
+                Plastik</label
+              >
+              <label
+                ><input type="checkbox" name="sampah" value="kaca" />
+                Kaca</label
+              >
+              <label
+                ><input type="checkbox" name="sampah" value="elektronik" />
+                Elektronik</label
+              >
+              <label
+                ><input type="checkbox" name="sampah" value="besi" />
+                Besi</label
+              >
+              <label
+                ><input type="checkbox" name="sampah" value="kertas" />
+                Kertas</label
+              >
+              <label
+                ><input type="checkbox" name="sampah" value="minyak" />
+                Minyak</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="metode">Metode Pembayaran</label>
+            <select id="metode" name="metode" class="form-control" required>
+              <option selected disabled>Pilih jenis pembayaran</option>
+              <option value="tunai">Tunai</option>
+              <option value="dana">Dana</option>
+              <option value="gopay">Gopay</option>
+              <option value="sp">Shopeepay</option>
+            </select>
+            <div class="error-message" id="metodeError">
+              Metode pembayaran harus diisi.
+            </div>
+          </div>
+
+          <div
+            id="nomorPembayaranGroup"
+            class="form-group"
+            style="display: none"
+          >
+            <label for="nomorPembayaran">Nomor Pembayaran</label>
+            <input
+              type="text"
+              id="nomorPembayaran"
+              name="nomorPembayaran"
+              class="form-control"
+              placeholder="Masukkan nomor Dana/Gopay/ShopeePay"
+            />
+            <div class="error-message" id="nomorPembayaranError">
+              Nomor pembayaran harus diisi.
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="tanggal">Tanggal Penjemputan</label>
+            <input type="date" id="tanggal" name="tanggal" required />
+          </div>
+
+          <div class="form-group">
+            <label for="waktu">Waktu Penjemputan</label>
+            <input type="time" id="waktu" name="waktu" required />
+            <div class="error-message" id="waktuError">
+              Waktu penjemputan harus diisi.
+            </div>
+          </div>
+
+          <button type="submit">Jadwalkan Penjemputan</button>
+        </form>
+      </div>
+    </div>
+    <div id="successModal" class="modal">
+      <div class="modal-content">
+        <h3>✅ Jadwal Penjemputan Terkirim!</h3>
+        <p>Petugas kami akan segera menjemput sesuai jadwal yang Anda pilih.</p>
+        <button onclick="closeModal()">Tutup</button>
+      </div>
+    </div>
+
+    <!-- script js validasi -->
+    <script>
+      document
+        .getElementById("pickupForm")
+        .addEventListener("submit", function (e) {
+          const checkboxes = document.querySelectorAll(
+            'input[name="sampah"]:checked'
+          );
+          if (checkboxes.length === 0) {
+            alert("Harap pilih minimal satu jenis sampah.");
+            e.preventDefault();
+          }
+        });
+      document
+        .getElementById("pickupForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const checkboxes = document.querySelectorAll(
+            'input[name="sampah"]:checked'
+          );
+          if (checkboxes.length === 0) {
+            alert("Harap pilih minimal satu jenis sampah.");
+            return;
+          }
+          document.getElementById("successModal").style.display = "block";
+        });
+
+      function closeModal() {
+        document.getElementById("successModal").style.display = "none";
+        document.getElementById("pickupForm").reset();
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("pickupForm");
+        const waktuInput = document.getElementById("waktu");
+        const waktuError = document.getElementById("waktuError");
+
+        // Elemen untuk Metode Pembayaran (Ditambahkan)
+        const metodePembayaranSelect = document.getElementById("metode");
+        const nomorPembayaranGroup = document.getElementById(
+          "nomorPembayaranGroup"
+        ); 
+        const nomorPembayaranInput = document.getElementById("nomorPembayaran"); 
+        const nomorPembayaranError = document.getElementById(
+          "nomorPembayaranError"
+        ); 
+
+        // event listener untuk input waktu secara langsung
+        waktuInput.addEventListener('change', function() {
+            validateWaktu(); 
+        });
+        waktuInput.addEventListener('input', function() {
+           validateWaktu(); 
+        });
+
+        // akan muncul ketika memilih metode pembayaran yg diinginkan
+        metodePembayaranSelect.addEventListener(
+        "change",
+        toggleNomorPembayaranField
+      );
+
+      // Panggil fungsi toggle saat halaman dimuat (untuk inisialisasi tampilan nomor pembayaran)
+      toggleNomorPembayaranField();
+
+      // Fungsi validasi utama 
+      function validateForm() {
+        let isValid = true;
+
+        // Validasi Nomor Telepon
+        const telepon = document.getElementById("telepon");
+        const teleponError = document.getElementById("teleponError");
+        const teleponPattern = /^[0-9]{10,13}$/; // Pola untuk 10-13 digit angka
+        if (!teleponPattern.test(telepon.value)) {
+          teleponError.textContent =
+            "Nomor telepon tidak valid (10-13 digit angka).";
+          teleponError.style.display = "block";
+          isValid = false;
+        } else {
+          teleponError.style.display = "none";
+        }
+
+        // Validasi Waktu Penjemputan (08:00 - 17:00)
+        // Panggil validasi waktu secara terpisah dan gabungkan hasilnya
+        if (!validateWaktu()) {
+          isValid = false;
+        }
+
+        // Validasi Nomor Pembayaran (Ditambahkan)
+        // Panggil validasi nomor pembayaran secara terpisah dan gabungkan hasilnya
+        if (!validateNomorPembayaran()) {
+          isValid = false;
+        }
+
+        return isValid; // Mengembalikan true jika semua validasi berhasil
+      }
+
+      // Fungsi validasi waktu agar hanya bisa mengisi dalam rentang 8-17
+      function validateWaktu() {
+        const selectedTime = waktuInput.value;
+
+        if (!selectedTime) {
+          waktuError.textContent = "Waktu penjemputan harus diisi.";
+          waktuError.style.display = "block";
+          return false;
+        }
+
+        const [hours, minutes] = selectedTime.split(":").map(Number);
+
+        const selectedDate = new Date();
+        selectedDate.setHours(hours);
+        selectedDate.setMinutes(minutes);
+        selectedDate.setSeconds(0);
+        selectedDate.setMilliseconds(0);
+
+        // bagian untuk menentukan batas waktu
+        const startTime = new Date();
+        startTime.setHours(8);
+        startTime.setMinutes(0);
+        startTime.setSeconds(0);
+        startTime.setMilliseconds(0);
+
+        const endTime = new Date();
+        endTime.setHours(17); // 17:00
+        endTime.setMinutes(0);
+        endTime.setSeconds(0);
+        endTime.setMilliseconds(0);
+
+        // untuk memeriksa apakah waktu yang dipilih berada di luar rentang yang diizinkan (sebelum 08:00 atau pada/setelah 17:00)
+        if (selectedDate < startTime || selectedDate >= endTime) {
+          waktuError.textContent =
+            "Waktu penjemputan harus antara 08:00 dan 17:00.";
+          waktuError.style.display = "block";
+          return false;
+        } else {
+          waktuError.style.display = "none";
+          return true;
+        }
+      }
+
+      // Fungsi untuk menampilkan atau menyembunyikan kolom nomor pembayaran 
+      function toggleNomorPembayaranField() {
+        const selectedValue = metodePembayaranSelect.value;
+        if (
+          selectedValue === "dana" ||
+          selectedValue === "gopay" ||
+          selectedValue === "sp"
+        ) {
+          nomorPembayaranGroup.style.display = "block";
+          nomorPembayaranInput.setAttribute("required", "required"); // Menjadikan input wajib diisi
+        } else {
+          nomorPembayaranGroup.style.display = "none";
+          nomorPembayaranInput.removeAttribute("required"); // Hapus atribut wajib diisi
+          nomorPembayaranInput.value = ""; // Kosongkan nilai jika disembunyikan
+          nomorPembayaranError.style.display = "none"; // Sembunyikan pesan error
+        }
+
+        // untuk mengatur placeholder sesuai metode
+        let placeholderText = "Masukkan nomor pembayaran";
+        if (selectedValue === "dana") {
+          placeholderText = "Masukkan nomor Dana";
+        } else if (selectedValue === "gopay") {
+          placeholderText = "Masukkan nomor GoPay";
+        } else if (selectedValue === "sp") {
+          placeholderText = "Masukkan nomor ShopeePay";
+        }
+        nomorPembayaranInput.setAttribute("placeholder", placeholderText);
+      }
+
+      // Fungsi validasi untuk Nomor Pembayaran (Ditambahkan)
+      function validateNomorPembayaran() {
+        if (
+          nomorPembayaranInput.hasAttribute("required") &&
+          nomorPembayaranInput.value.trim() === ""
+        ) {
+          nomorPembayaranError.textContent = "Nomor pembayaran harus diisi.";
+          nomorPembayaranError.style.display = "block";
+          return false;
+        } else if (
+          nomorPembayaranInput.hasAttribute("required") &&
+          !/^[0-9]+$/.test(nomorPembayaranInput.value.trim())
+        ) {
+          // Opsional: Validasi bahwa input hanya angka jika diperlukan
+          nomorPembayaranError.textContent =
+            "Nomor pembayaran hanya boleh berisi angka.";
+          nomorPembayaranError.style.display = "block";
+          return false;
+        } else {
+          nomorPembayaranError.style.display = "none";
+          return true;
+        }
+      }
+      });
+    </script>
+
+    <!-- footer -->
+    <footer style="color: white; padding: 40px 20px">
+      <div
+        style="
+          max-width: 1100px;
+          margin: 0 auto;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: flex-start;
+        "
+      >
+        <!-- footer kiri -->
+        <div style="margin-bottom: 20px">
+          <h5 style="margin-bottom: 15px">SampahIN</h5>
+          <p>
+            <i class="bi bi-geo-alt-fill" style="margin-right: 6px"></i> Sleman,
+            Yogyakarta, Indonesia
+          </p>
+          <p>
+            <i class="bi bi-envelope-fill" style="margin-right: 6px"></i>
+            SampahIN@gmail.com
+          </p>
+          <p>
+            <i class="bi bi-whatsapp" style="margin-right: 6px"></i>
+            +62-813-5909-7702
+          </p>
+        </div>
+
+        <!-- footer kanan -->
+        <div style="text-align: right">
+          <h6 style="margin-bottom: 15px">Hubungi Kami</h6>
+          <div
+            style="
+              display: flex;
+              gap: 10px;
+              justify-content: flex-end;
+              flex-wrap: wrap;
+            "
+          >
+            <a
+              href="https://wa.me/6281359097702"
+              target="_blank"
+              style="
+                background-color: #25d366;
+                color: white;
+                padding: 6px 12px;
+                border-radius: 4px;
+                text-decoration: none;
+                font-size: 14px;
+              "
+            >
+              <i class="bi bi-whatsapp" style="margin-right: 4px"></i>Hubungi
+              Kami
+            </a>
+            <a
+              href="https://instagram.com/SampahIn"
+              target="_blank"
+              style="
+                background-color: #e1306c;
+                color: white;
+                padding: 6px 12px;
+                border-radius: 4px;
+                text-decoration: none;
+                font-size: 14px;
+              "
+            >
+              <i class="bi bi-instagram" style="margin-right: 4px"></i>Ikuti
+              Kami
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr style="margin: 30px 0; border-color: rgba(255, 255, 255, 0.3)" />
+      <div style="text-align: center; font-size: 13px">©2025 SampahIN</div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SampahIN</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .html {
+        scroll-behavior: smooth;
+      }
+
+      .hero {
+        background-color: #2e5939;
+        color: white;
+        padding: 3rem 1rem;
+      }
+
+      .info-box {
+        background-color: white;
+        border-radius: 8px;
+        padding: 2rem;
+        height: 100%;
+        text-align: center;
+      }
+
+      .problem-box {
+        background-color: #1c1c1c;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+        border-radius: 8px;
+        font-weight: bold;
+      }
+
+      footer {
+        background-color: #388e3c;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .navbar-dark .nav-link {
+        color: white;
+      }
+
+      .navbar-dark .nav-link:hover {
+        text-decoration: underline;
+      }
+
+      .bg-green {
+        background-color: #388e3c;
+      }
+
+      .overlay-card {
+        position: relative;
+        overflow: hidden;
+        height: 250px;
+        border-radius: 12px;
+      }
+
+      .overlay-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border-radius: 12px;
+      }
+
+      .overlay,
+      .default-label {
+        position: absolute;
+        inset: 0;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .overlay {
+        background: rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+      }
+
+      .overlay-text {
+        color: #fff;
+        padding: 1rem;
+      }
+
+      .default-label {
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: bold;
+        transition: opacity 0.4s ease;
+      }
+
+      .overlay-card:hover .overlay {
+        opacity: 1;
+      }
+
+      .overlay-card:hover .default-label {
+        opacity: 0;
+      }
+
+      section {
+        scroll-margin-top: 80px;
+      }
+
+      .btn-instagram {
+        background: linear-gradient(
+          45deg,
+          #f09433,
+          #e6683c,
+          #dc2743,
+          #cc2366,
+          #bc1888
+        );
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        text-align: center;
+        text-decoration: none;
+        transition: 0.3s ease-in-out;
+      }
+
+      .btn-instagram:hover {
+        opacity: 0.85;
+        color: white;
+      }
+      header {
+        background-color: #1a1a1a;
+        color: white;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header nav a {
+        color: white;
+        margin-left: 20px;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        border-radius: 5px;
+      }
+
+      .dropdown-content a {
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #555;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div><strong>SampahIN</strong></div>
+      <nav>
+        <a href="Home.html">Beranda</a>
+        <div class="dropdown">
+          <a href="#" class="dropbtn">Layanan ▾</a>
+          <div class="dropdown-content">
+            <a href="Pickup.html">Pickup</a>
+            <a href="dropoff2.html">Dropoff</a>
+          </div>
+        </div>
+        <a href="Catalogue.html">Katalog</a>
+        <a href="Contact.html">Hubungi Kami</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero text-justify" id="aboutus">
+      <div class="container">
+        <div class="row align-items-center text-white">
+          <!-- Kolom Gambar -->
+          <div class="col-md-5 mb-4 mb-md-0 text-justify">
+            <img
+              src="image/tagline.png"
+              alt="pp"
+              class="img-fluid rounded"
+              style="max-height: 300px"
+            />
+          </div>
+          <!-- Kolom Teks -->
+          <div class="col-md-7">
+            <p>
+              Setiap tahunnya, Indonesia menghasilkan puluhan juta ton sampah,
+              namun tingkat daur ulang nasional masih di bawah 10%. Sebagian
+              besar sampah tersebut berakhir di Tempat Pembuangan Akhir (TPA),
+              dibuang secara ilegal, atau mencemari lautan. Sebagai negara
+              berkembang, kita masih menghadapi keterbatasan dalam infrastruktur
+              pengelolaan lingkungan yang memadai.
+            </p>
+            <p>
+              Menjawab tantangan ini, <strong>SampahIN</strong> hadir sebagai
+              layanan web yang dirancang untuk memudahkan masyarakat dalam
+              menjual sampah anorganik seperti plastik, kertas, logam, dan
+              barang elektronik secara digital.
+            </p>
+            <p>
+              Platform ini menjadi solusi atas permasalahan pengelolaan sampah
+              yang sering kali tidak efektif. Melalui SampahIN, pengguna dapat
+              memilah sampah berdasarkan kategori, menjadwalkan penjemputan,
+              serta menerima pembayaran langsung setelah proses penimbangan
+              dilakukan oleh mitra.
+            </p>
+            <p>
+              Dengan dukungan teknologi, SampahIN berupaya menciptakan ekosistem
+              digital yang mendukung ekonomi sirkular, mengurangi volume sampah
+              yang masuk ke TPA, serta membuka peluang penghasilan tambahan bagi
+              masyarakat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kenapa Harus di SampahIN -->
+    <section class="bg-green py-5">
+      <div class="container text-white">
+        <h2 class="mb-4 text-center">Kenapa Harus di SampahIN?</h2>
+        <div class="row g-4">
+          <div class="col-md-3 d-flex text-black">
+            <div class="info-box flex-fill">
+              <h5>Jual Sampah</h5>
+              <br />
+              <p>
+                Sampah bukan akhir, tapi awal perjuangan. Kirimkan sampah daur
+                ulang non-B3, isi data jenis dan jumlahnya, lalu dapatkan uang
+                tunai sambil menjaga bumi
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex text-black">
+            <div class="info-box flex-fill">
+              <h5>Sedekah Sampah</h5>
+              <br />
+              <p>
+                Kebaikan bisa dimulai dari sisa kemarin. Sumbangkan sampah daur
+                ulang ke program sosial terpercaya. Kebaikan bisa dimulai dari
+                limbah sekitarmu.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex text-black">
+            <div class="info-box flex-fill">
+              <h5>Solusi Bisnis & Acara</h5>
+              <br />
+              <p>
+                Urusan sampah, kami yang tangani. Butuh pengelolaan sampah dari
+                restoran, toko, kantor, atau event besar? Jadwalkan penjemputan
+                langsung dari dashboard SampahIN, mudah dan fleksibel.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex text-black">
+            <div class="info-box flex-fill">
+              <h5>Sekolah Bebas Sampah</h5>
+              <br />
+              <p>
+                Ajarkan nilai dari sampah sejak dini. Ajak siswa memilah,
+                mengelola, dan menabung dari sampah daur ulang. Tambah kas
+                sekolah sekaligus tanamkan kesadaran lingkungan.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solusi Kami -->
+    <section id="layanan-kami" class="py-3">
+      <div class="container">
+        <h2 class="mb-4 text-center">Layanan Kami</h2>
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title text-center">Pick Up</h4>
+                <p class="card-text">
+                  Pilih jenis sampah yang ingin dijual, masukkan estimasi berat,
+                  dan kolektor kami akan menjemput langsung ke lokasi Anda.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="col-md-6">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <h4 class="card-title text-center">Drop Off</h4>
+                <p class="card-text">
+                  Anda dapat membawa sampah langsung ke titik pengumpulan
+                  SampahIN. Kami akan menghitung dan membayar secara instan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Masalah yang Dihadapi -->
+    <section class="bg-dark py-5">
+      <div class="container">
+        <h2 class="text-white mb-4 text-center">
+          Hadir Untuk Mengatasi Masalah Yang Terjadi
+        </h2>
+        <div class="row g-4">
+          <!-- card Masalah -->
+          <div class="col-md-6">
+            <div class="overlay-card">
+              <img
+                src="image/linkungan.png"
+                class="img-fluid rounded-3"
+                alt="Sosial"
+              />
+              <div class="overlay">
+                <div class="overlay-text">
+                  <h4>Isu Sosial</h4>
+                  <br />
+                  <p>
+                    Kami bangun sistem yang tidak hanya menguntungkan
+                    lingkungan, tapi juga manusia. Pemulung dan pengepul adalah
+                    garda depan pengelolaan sampah. Kami dukung mereka dengan
+                    teknologi yang memberdayakan, bukan menggantikan.
+                  </p>
+                </div>
+              </div>
+              <div class="default-label">Sosial</div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="overlay-card">
+              <img
+                src="image/hutan.jpg"
+                class="img-fluid rounded-3"
+                alt="Lingkungan"
+              />
+              <div class="overlay">
+                <div class="overlay-text">
+                  <h4>Krisis Lingkungan</h4>
+                  <br />
+                  <p>
+                    Sampah menyebabkan pencemaran tanah baik dari sampah organik
+                    maupun anorganik. Sampah juga dapat menyumbat aliran dan
+                    mencemari sumber air bersih, serta mengancam keanekaragaman
+                    hayati.
+                  </p>
+                </div>
+              </div>
+              <div class="default-label">Lingkungan</div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="overlay-card">
+              <img
+                src="image/ekonomi.jpg"
+                class="img-fluid rounded-3"
+                alt="Ekonomi"
+              />
+              <div class="overlay">
+                <div class="overlay-text">
+                  <h4>Dampak Ekonomi</h4>
+                  <br />
+                  <p>
+                    Sampah plastik merugikan dunia miliaran dolar tiap tahun.
+                    Tapi di tangan yang tepat, sampah punya nilai. SampahIN
+                    mengubah limbah menjadi peluang, mendorong ekonomi sirkular
+                    dan membuka akses ekonomi bagi masyarakat dari berbagai
+                    latar belakang.
+                  </p>
+                </div>
+              </div>
+              <div class="default-label">Ekonomi</div>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="overlay-card">
+              <img
+                src="image/kesehatan.jpeg"
+                class="img-fluid rounded-3"
+                alt="Kesehatan"
+              />
+              <div class="overlay">
+                <div class="overlay-text">
+                  <h4>Ancaman Kesehatan</h4>
+                  <br />
+                  <p>
+                    Sampah bukan hanya merusak lingkungan, tapi juga bisa
+                    menjadi sumber penyakit. Sampah yang menumpuk menjadi tempat
+                    berkembang biaknya lalat, tikus, dan nyamuk (DBD,
+                    leptospirosis, diare). Limbah cair dan bahan berbahaya bisa
+                    meresap ke sumur atau mencemari hasil pertanian. SampahIN
+                    hadir untuk mengatasi sampah daur ulang.
+                  </p>
+                </div>
+              </div>
+              <div class="default-label">Kesehatan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="pt-5 pb-3" id="contactus">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start">
+          <div class="mb-4 mb-md-0 text-start">
+            <h5 class="fw-bold mb-3">SampahIN</h5>
+            <p>
+              <i class="bi bi-geo-alt-fill me-2"></i>
+              Sleman, Yogyakarta, Indonesia
+            </p>
+            <p><i class="bi bi-envelope-fill me-2"></i> SampahIN@gmail.com</p>
+            <p><i class="bi bi-whatsapp me-2"></i> ‪+62-813-5909-7702‬</p>
+          </div>
+
+          <div class="text-md-end">
+            <h6 class="fw-bold mb-3">Hubungi Kami</h6>
+            <div class="d-flex gap-2 justify-content-md-end mb-3">
+              <a href="https://wa.me/6281359097702" target="Apakah Benar Ini SampahIn?" class="btn btn-success btn-sm">
+                <i class="bi bi-whatsapp me-1"></i> Hubungi Kami</a>
+              <a href="https://instagram.com/SampahIn" class="btn btn-instagram btn-sm">
+                <i class="bi bi-instagram me-1"></i> Ikuti Kami</a>
+            </div>
+          </div>
+        </div>
+        <hr class="my-4" />
+        <div class="text-center small">©2025 SampahIN</div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

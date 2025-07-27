@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Katalog Produk</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header nav {
+      display: flex;
+      align-items: center;
+    }
+
+    header nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      color: white;
+      text-decoration: none;
+      padding: 8px 0;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 150px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      border-radius: 4px;
+      top: 100%;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 15px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #4caf50;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .category {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding-bottom: 10px;
+    }
+
+    .card {
+      background: white;
+      flex: 0 0 auto;
+      width: 140px;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card img {
+      max-width: 100%;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .card h4 {
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: green;
+      margin: 0;
+    }
+
+    .category::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .category::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 10px;
+    }
+
+    .category::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    @media screen and (max-width: 600px) {
+      .card {
+        width: 120px;
+      }
+    }
+
+    .scrolling-wrapper {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .scrolling-wrapper .card {
+      display: inline-block;
+      min-width: 180px;
+      margin-right: 1rem;
+      vertical-align: top;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <div><strong>SampahIN</strong></div>
+    <nav>
+      <a href="Home.html">Beranda</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">Layanan ▾</a>
+        <div class="dropdown-content">
+          <a href="pickup.html">Pickup</a>
+          <a href="dropoff2.html">Dropoff</a>
+        </div>
+      </div>
+      <a href="Catalogue.html">Katalog</a>
+      <a href="Contact.html">Hubungi Kami</a>
+    </nav>
+  </header>
+  </div>
+  <div class="container my-4">
+    <h2>Plastik</h2>
+    <div class="scrolling-wrapper">
+      <div class="card text-center">
+        <img src="image/botol.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Botol Plastik">
+        <div class="card-body">
+          <h6 class="card-title">Botol Plastik</h6>
+          <p class="text-success"> Rp 1.500/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/cup.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Cup Plastik">
+        <div class="card-body">
+          <h6 class="card-title">Cup Plastik</h6>
+          <p class="text-success"> Rp 1.400/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/ember.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Ember">
+        <div class="card-body">
+          <h6 class="card-title">Ember</h6>
+          <p class="text-success"> Rp 1.900/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/galon.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Galon">
+        <div class="card-body">
+          <h6 class="card-title">Galon</h6>
+          <p class="text-success"> Rp 1.200/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/jerigen.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Jerigen">
+        <div class="card-body">
+          <h6 class="card-title">Jerigen</h6>
+          <p class="text-success"> Rp 1.700/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/thinwall.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Thinwall">
+        <div class="card-body">
+          <h6 class="card-title">Thinwall</h6>
+          <p class="text-success"> Rp 1.000/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/tutup bottol.jpg" class="card-img-top" style="height: 150px; object-fit: cover;"
+          alt="Tutup Botol Plastik">
+        <div class="card-body">
+          <h6 class="card-title">Tutup Botol Plastik</h6>
+          <p class="text-success"> Rp 2.000/Kg</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container my-4">
+    <h2>Kaca</h2>
+    <div class="scrolling-wrapper">
+      <div class="card text-center">
+        <img src="image/BIR.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Botol Bir">
+        <div class="card-body">
+          <h6 class="card-title">Botol Bir</h6>
+          <p class="text-success"> Rp 400/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/kecap.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Botol Kecap">
+        <div class="card-body">
+          <h6 class="card-title">Botol Kecap</h6>
+          <p class="text-success"> Rp 300/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/marjan.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Botol Sirup">
+        <div class="card-body">
+          <h6 class="card-title">Botol Sirup</h6>
+          <p class="text-success"> Rp 200/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/madu.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Botol Madu">
+        <div class="card-body">
+          <h6 class="card-title">Botol Madu</h6>
+          <p class="text-success"> Rp 1.000/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/saos.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Botol Saos">
+        <div class="card-body">
+          <h6 class="card-title">Botol Saos</h6>
+          <p class="text-success">Rp 100/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/soda.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Botol Soda">
+        <div class="card-body">
+          <h6 class="card-title">Botol Soda</h6>
+          <p class="text-success"> Rp 150/Kg</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container my-4">
+    <h2>Kertas</h2>
+    <div class="scrolling-wrapper">
+      <div class="card text-center">
+        <img src="image/bukuu.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Buku">
+        <div class="card-body">
+          <h6 class="card-title">Buku</h6>
+          <p class="text-success"> Rp 3.200/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/hvs.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Kertas HVS">
+        <div class="card-body">
+          <h6 class="card-title">Kertas HVS</h6>
+          <p class="text-success"> Rp 1.900/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/kardus.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Kardus">
+        <div class="card-body">
+          <h6 class="card-title">Kardus</h6>
+          <p class="text-success"> Rp 1.700/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/koran.jpg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Koran">
+        <div class="card-body">
+          <h6 class="card-title">Koran</h6>
+          <p class="text-success"> Rp 1.400/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/sarang telur.jpg" class="card-img-top" style="height: 150px; object-fit: cover;"
+          alt="Sarang Telur">
+        <div class="card-body">
+          <h6 class="card-title">Sarang Telur</h6>
+          <p class="text-success"> Rp 1.000/Kg</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container my-4">
+    <h2>Elektronik</h2>
+    <div class="scrolling-wrapper">
+      <div class="card text-center">
+        <img src="image/dispenser.jpeg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Dispenser">
+        <div class="card-body">
+          <h6 class="card-title">Dispenser</h6>
+          <p class="text-success"> Rp 3.500/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/kulkas.jpeg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Kulkas">
+        <div class="card-body">
+          <h6 class="card-title">Kulkas</h6>
+          <p class="text-success"> Rp 5.000/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/magice com.jpeg" class="card-img-top" style="height: 150px; object-fit: cover;"
+          alt="Magice Com">
+        <div class="card-body">
+          <h6 class="card-title">Magice Com</h6>
+          <p class="text-success"> Rp 4.500/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/mesin cuci.jpeg" class="card-img-top" style="height: 150px; object-fit: cover;"
+          alt="Mesin Cuci">
+        <div class="card-body">
+          <h6 class="card-title">Mesin Cuci</h6>
+          <p class="text-success"> Rp 4.700/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/tv.jpeg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="TV">
+        <div class="card-body">
+          <h6 class="card-title">TV</h6>
+          <p class="text-success"> Rp 4.900/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/speaker.jpeg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Speaker">
+        <div class="card-body">
+          <h6 class="card-title">Speaker</h6>
+          <p class="text-success"> Rp 4.000/Kg</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container my-4">
+    <h2>Besi</h2>
+    <div class="scrolling-wrapper">
+      <div class="card text-center">
+        <img src="image/baut bekas.jpeg" class="card-img-top" style="height: 150px; object-fit: cover;"
+          alt="Baut Bekas">
+        <div class="card-body">
+          <h6 class="card-title">Baut Bekas</h6>
+          <p class="text-success"> Rp 4.000/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/gir bekas.jpeg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Gir Bekas">
+        <div class="card-body">
+          <h6 class="card-title">Gir Bekas</h6>
+          <p class="text-success"> Rp 5.000/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/kaleng minuman.jpeg" class="card-img-top" style="height: 150px; object-fit: cover;"
+          alt="Kaleng Minuman">
+        <div class="card-body">
+          <h6 class="card-title">Kaleng Minuman</h6>
+          <p class="text-success"> Rp 3.800/Kg</p>
+        </div>
+      </div>
+      <div class="card text-center">
+        <img src="image/pipa besi.jpeg" class="card-img-top" style="height: 150px; object-fit: cover;" alt="Pipa Besi">
+        <div class="card-body">
+          <h6 class="card-title">Pipa Besi</h6>
+          <p class="text-success"> Rp 5.200/Kg</p>
+        </div>
+      </div>
+      <div class="container my-4">
+        <h2>Minyak Jelantah</h2>
+        <div class="scrolling-wrapper">
+          <div class="card text-center">
+            <img src="image/minyak jelantah.jpeg" class="card-img-top" style="height: 150px; object-fit: cover;"
+              alt="Minyak Jelantah">
+            <div class="card-body">
+              <h6 class="card-title">Minyak Jelantah</h6>
+              <p class="text-success"> Rp 3.000/Kg</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
